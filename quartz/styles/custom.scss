@@ -27,9 +27,34 @@ button.toc-header {
 // highlight. Works together with `folderClickBehavior: collapse` so the
 // whole folder title row toggles the folder (not just the chevron).
 .explorer {
-  $explorer-row-radius: 6px;
+  $explorer-row-radius: 999px; // fully rounded "pill" rows
   $explorer-row-pad-y: 0.25rem;
-  $explorer-row-pad-x: 0.4rem;
+  $explorer-row-pad-x: 0.7rem; // a touch more horizontal room for the pill
+
+  // Thin, subtle scrollbar on the explorer list.
+  --explorer-sb-thumb: #{"color-mix(in srgb, var(--dark) 22%, transparent)"};
+
+  .explorer-ul {
+    scrollbar-width: thin; // Firefox
+    scrollbar-color: var(--explorer-sb-thumb) transparent;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--explorer-sb-thumb);
+      border-radius: 999px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #{"color-mix(in srgb, var(--dark) 38%, transparent)"};
+    }
+  }
 
   // Themed "active/current" accent, derived from the theme's --tertiary
   // (the same colour Quartz already uses for the active link) instead of
@@ -121,6 +146,34 @@ button.toc-header {
     .folder-title,
     .folder-icon {
       color: var(--explorer-accent);
+    }
+  }
+
+  // --- Always-visible explorer: remove the desktop "Explorer" header ---
+  // Hide the whole desktop header line (label + chevron + its toggle). The
+  // tree below is a sibling, so it is unaffected; the mobile hamburger
+  // (.mobile-explorer) is left alone so the overlay still works on phones.
+  button.desktop-explorer.explorer-toggle {
+    display: none;
+  }
+
+  // With the header gone, drop the top gap so the tree sits neatly under
+  // the search box.
+  .explorer-content {
+    margin-top: 0;
+  }
+
+  // Keep the tree open on desktop/tablet even if `.collapsed` is ever set
+  // (the mobile hamburger overlay is left untouched).
+  @media not all and #{$mobile} {
+    &.collapsed {
+      flex: 0 1 auto;
+
+      > .explorer-content {
+        height: auto;
+        margin-top: 0;
+        visibility: visible;
+      }
     }
   }
 }
