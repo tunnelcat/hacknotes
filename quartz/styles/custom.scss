@@ -1,3 +1,37 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+// Table of Contents: always expanded, collapse/minimize feature removed
+button.toc-header {
+  pointer-events: none; // kill the collapse toggle (mouse + keyboard activation)
+
+  .fold {
+    display: none !important; // remove the chevron
+  }
+}
+
+// Never let the "collapsed" state shrink or hide the list
+.toc:has(button.toc-header.collapsed) {
+  flex: 0 1 auto !important;
+}
+
+.toc-content.collapsed {
+  display: block !important;
+}
+
+// Site title "~/hacknotes" with a "by tunnelcat" subtitle underneath
+.page-title {
+  line-height: 1.1;
+
+  a::after {
+    content: "by tunnelcat";
+    display: block;
+    font-family: var(--bodyFont);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--gray);
+    margin-top: 0.15rem;
+  }
+}
+
