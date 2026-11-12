@@ -148,6 +148,9 @@ plugins:
     enabled: true
   - source: "@quartz-community/explorer"
     enabled: true
+    options:
+      # Clicking a folder's title (not just the chevron) toggles collapse/expand
+      folderClickBehavior: collapse
     layout:
       position: left
       priority: 50

@@ -20,6 +20,111 @@ button.toc-header {
   display: block !important;
 }
 
+// Explorer: full-width clickable rows with rounded corners
+// ---------------------------------------------------------
+// Folder rows and file links get a padded, full-width hit area that
+// extends to the right edge of the sidebar, with a rounded hover
+// highlight. Works together with `folderClickBehavior: collapse` so the
+// whole folder title row toggles the folder (not just the chevron).
+.explorer {
+  $explorer-row-radius: 6px;
+  $explorer-row-pad-y: 0.25rem;
+  $explorer-row-pad-x: 0.4rem;
+
+  // Themed "active/current" accent, derived from the theme's --tertiary
+  // (the same colour Quartz already uses for the active link) instead of
+  // the reference's red. color-mix keeps it correct in light & dark.
+  --explorer-accent: var(--tertiary);
+  --explorer-accent-bg: #{"color-mix(in srgb, var(--tertiary) 14%, transparent)"};
+  --explorer-accent-ring: #{"color-mix(in srgb, var(--tertiary) 38%, transparent)"};
+
+  // Subtle, neutral hover: just a touch lighter than the sidebar
+  // background in dark mode (and a touch darker in light mode), instead of
+  // Quartz's brighter blue-grey --highlight. Mixing the foreground colour
+  // (--dark) at a low alpha keeps it neutral and theme-aware.
+  --explorer-hover: #{"color-mix(in srgb, var(--dark) 6%, transparent)"};
+
+  // --- Folder title rows ---
+  // The row background/hover lives on the container; the padding (the
+  // actual hit area) lives on the button so the whole row — out to the
+  // right edge — toggles the folder, not just the chevron. The chevron is
+  // reordered to sit on the RIGHT of the row.
+  .folder-container {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 $explorer-row-pad-x 0 0; // small right inset for the chevron
+    border-radius: $explorer-row-radius;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background-color: var(--explorer-hover);
+    }
+
+    // Let the title fill all remaining width so a click anywhere on the
+    // row (out to the right edge) lands on the toggle button.
+    & > div {
+      order: 0;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .folder-button {
+      width: 100%;
+      box-sizing: border-box;
+      padding: $explorer-row-pad-y 0 $explorer-row-pad-y $explorer-row-pad-x;
+    }
+
+    // Move the chevron to the right edge of the row.
+    .folder-icon {
+      order: 1;
+      margin: 0 0 0 0.4rem;
+      flex-shrink: 0;
+    }
+  }
+
+  // --- File links ---
+  .explorer-content ul li > a {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: $explorer-row-pad-y $explorer-row-pad-x;
+    border-radius: $explorer-row-radius;
+    transition:
+      background-color 0.15s ease,
+      box-shadow 0.15s ease;
+
+    &:hover {
+      background-color: var(--explorer-hover);
+    }
+  }
+
+  // --- Active / current item: themed "pill" (adapted from the red) ---
+  // Applies to the current note (Quartz marks it .active/.is-active) and,
+  // if ever marked, the current folder. Uses an inset ring so the border
+  // adds no layout shift versus the other rows.
+  .explorer-content a.active,
+  .explorer-content a.is-active,
+  .folder-container.active,
+  .folder-container.is-active {
+    color: var(--explorer-accent);
+    background-color: var(--explorer-accent-bg);
+    box-shadow: inset 0 0 0 1px var(--explorer-accent-ring);
+
+    &:hover {
+      background-color: var(--explorer-accent-bg);
+    }
+  }
+
+  // Keep the accent colour on the active folder's title text & chevron.
+  .folder-container.active,
+  .folder-container.is-active {
+    .folder-title,
+    .folder-icon {
+      color: var(--explorer-accent);
+    }
+  }
+}
+
 // Site title "~/hacknotes" with a "by tunnelcat" subtitle underneath
 .page-title {
   line-height: 1.1;
