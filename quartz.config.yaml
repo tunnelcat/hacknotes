@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: tunnelcat.github.io/hacknotes
+  baseUrl: tunnelcat.github.io/hacknotes/
   ignorePatterns:
     - private
     - templates
