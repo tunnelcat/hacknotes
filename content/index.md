@@ -3,7 +3,7 @@ title: Welcome to ~/hacknotes !
 ---
 
 > [!abstract] README
-> tunnelcat here! This is a collection of my offensive-security focused writeups covering web security, everything from Active Directory to the cloud, CTFs/challenge machines, courses, and more to come.
+> tunnelcat here! This is a collection of my offensive-security focused writeups covering web security, everything from Active Directory to the cloud, CTFs/challenge machines, courses, and more to come. Hack responsibly!
 >
 > Use the search (top-left) to jump to a technique, or pick a collection below.
 
