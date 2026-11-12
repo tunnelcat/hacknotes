@@ -26,8 +26,8 @@ ls level3-extracted/0-f52ec03b227ea6094b04e43f475fb0126edb5a61
 
 Secret keys: 
 ```
-access_key AKIAJ366LIPB4IJKT7SA
-secret_access_key OdNa7m+bqUvF3Bn/qgSnPE1kBpqcBTTjqwP83Jys
+access_key AKIAJ366[REDACTED]
+secret_access_key OdNa7m[REDACTED]
 ```
 
 ![d073e9f047dfcaa292767df93948e760.png](../../_resources/d073e9f047dfcaa292767df93948e760-1.png)
