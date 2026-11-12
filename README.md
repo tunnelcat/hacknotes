@@ -1,7 +1,7 @@
 # ~/hacknotes by tunnelcat
 tunnelcat (AKA Ferdinand Mudjialim) here! This is a collection of my offensive-security focused writeups covering web security, everything from Active Directory to the cloud, CTFs/challenge machines, courses, and more to come. Hack responsibly!
 
-🔗 [Check it out here! - ~/hacknotes](https://tunnelcat.github.io/hacknotes/)
+🔗 [Check it out here! [~/hacknotes]](https://tunnelcat.github.io/hacknotes/)
 
 ### Powered by Quartz v5
 
