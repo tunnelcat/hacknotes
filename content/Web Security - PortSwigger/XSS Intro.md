@@ -5,7 +5,7 @@
 
 Example ("Reflected XSS into HTML context with all tags blocked except custom ones"): 
 
-![d28d4bcef7c6cdc95e4745344e1798f0.png](../../_resources/d28d4bcef7c6cdc95e4745344e1798f0-1.png)
+![[d28d4bcef7c6cdc95e4745344e1798f0-1.png]]
 
 ## What is XSS? 
 - Compromise interactions that users have with an app 
@@ -34,11 +34,11 @@ Example ("Reflected XSS into HTML context with all tags blocked except custom on
 	- Test alternative payloads
 	- Test the attack in a browser (copy-paste or Burp Intercept)
 
-![38595fa2f0a75d982d11668c93ccf41d.png](../../_resources/38595fa2f0a75d982d11668c93ccf41d-1.png)
+![[38595fa2f0a75d982d11668c93ccf41d-1.png]]
 
-![3a814837a5a4bc8e4e376a964a76b87c.png](../../_resources/3a814837a5a4bc8e4e376a964a76b87c-1.png)
+![[3a814837a5a4bc8e4e376a964a76b87c-1.png]]
 
-![b6a972c65ee8e2d14d0522fe317e495d.png](../../_resources/b6a972c65ee8e2d14d0522fe317e495d-1.png)
+![[b6a972c65ee8e2d14d0522fe317e495d-1.png]]
 
 # Stored XSS
 - AKA 2nd order/persistent XSS

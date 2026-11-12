@@ -4,7 +4,7 @@ HTTP request smuggling interferes with the way a website processes sequences of 
 This can happen because requests are often first met at the front-end (load balancer/reverse proxy etc.), then the back-end.
 It is important that the front and back end systems agree about the boundaries between requests. If not, attackers can "inject" parts of their own HTTP request into the next request:
 
-![12d2562bab1e4ff068c1fa81914a820b.png](../../_resources/12d2562bab1e4ff068c1fa81914a820b-1.png)
+![[12d2562bab1e4ff068c1fa81914a820b-1.png]]
 
 # How does it work?
 
@@ -97,7 +97,7 @@ SMUGGLED        <- 8 bytes
 
 Actual example:
 
-![c372d5f2a98a223b4ad8c17250d19036.png](../../_resources/c372d5f2a98a223b4ad8c17250d19036-1.png)
+![[c372d5f2a98a223b4ad8c17250d19036-1.png]]
 
 ## TE.CL
 
@@ -119,7 +119,7 @@ Also include the trailing sequence `\r\n\r\n` after the final 0
 
 Actual example:
 
-![f03def6e93813a6be3094388b5f00606.png](../../_resources/f03def6e93813a6be3094388b5f00606-1.png)
+![[f03def6e93813a6be3094388b5f00606-1.png]]
 
 ## TE.TE
 
@@ -225,7 +225,7 @@ Foo: x
 
 Then, the normal request would be affected as such:
 
-![706e5b0dd641486618f134d5e4776b02.png](../../_resources/706e5b0dd641486618f134d5e4776b02-1.png)
+![[706e5b0dd641486618f134d5e4776b02-1.png]]
 
 Since the request contains an invalid URL, the server will respond with status code 404, indicating that a request smuggling vuln is present.
 
@@ -341,7 +341,7 @@ There is a way to reveal how the frontend rewrites requests:
 Example: 
 If an application reflects the `email` parameter, you can use request smuggling to reveal the rewriting.
 
-![7939aa6ea757e13cf2ebb72d14e6aabf.png](../../_resources/7939aa6ea757e13cf2ebb72d14e6aabf-1.png)
+![[7939aa6ea757e13cf2ebb72d14e6aabf-1.png]]
 
 Thus, the entire rewritten request (in green) is reflected and revealed. 
 
@@ -350,7 +350,7 @@ Thus, the entire rewritten request (in green) is reflected and revealed.
 ## Bypassing client authentication
 Sometimes, a TLS authentication requires that a client provide a certificate to the server. This certificate contains a CN "common name" that is often a username (in the client's case). Frontend servers sometimes append a non-standard header containing the client's CN that may be trusted. In practice, this is not usually exploitable because the frontend always overwrites the headers, but smuggled requests are hidden from the frontend, so the authentication on the backend can be bypassed.
 
-![91cd0cf700a1797fb49ee7067a19fc65.png](../../_resources/91cd0cf700a1797fb49ee7067a19fc65-1.png)
+![[91cd0cf700a1797fb49ee7067a19fc65-1.png]]
 
 ## Capturing other users' requests
 If the app has functionality to store and retrieve data (text), HTTP request smuggling can be used to capture other users' requests. Examples of such functions: comments, emails, profile descriptions, display names, etc.

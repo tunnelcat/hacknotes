@@ -17,5 +17,5 @@
 -   [MITRE ATT&CK Framework](https://attack.mitre.org/)
 
 Lockheed Cyber Kill Chain looks like: 
-![3d90b75c0509dd7a03bbac0e6ca701a5.png](../../_resources/3d90b75c0509dd7a03bbac0e6ca701a5-1.png)
+![[3d90b75c0509dd7a03bbac0e6ca701a5-1.png]]
 

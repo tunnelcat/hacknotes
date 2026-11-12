@@ -28,15 +28,15 @@ Kerberos is the DEFAULT authentication service for Windows domains. It is design
 
 ## TGT Contents
 
-![431da7f9c4ff40cc9418936201a0adf6.png](../../_resources/431da7f9c4ff40cc9418936201a0adf6-1.png)
+![[431da7f9c4ff40cc9418936201a0adf6-1.png]]
 
 ## Service Ticket Contents
 
-![22b8c5c8067f43adb0ffd1f620049a30.png](../../_resources/22b8c5c8067f43adb0ffd1f620049a30-1.png)
+![[22b8c5c8067f43adb0ffd1f620049a30-1.png]]
 
 ## Kerberos Authentication Process
 
-![f4e4cd593f9f4e487e255c90d20e9344.png](../../_resources/f4e4cd593f9f4e487e255c90d20e9344-1.png)
+![[f4e4cd593f9f4e487e255c90d20e9344-1.png]]
 
 AS-REQ - 1.) The client requests an Authentication Ticket or Ticket Granting Ticket (TGT).
 AS-REP - 2.) The Key Distribution Center verifies the client and sends back an encrypted TGT.
@@ -181,7 +181,7 @@ Dumping tickets
 3. `sekurlsa::tickets /export` Export all .kirbi tickets to current directory
 4. Recommended: Find an administrator ticket from the krbtgt (like below)
 
-![45904646f4f23a917b525f60fd60f81b.png](../../_resources/45904646f4f23a917b525f60fd60f81b-1.png)
+![[45904646f4f23a917b525f60fd60f81b-1.png]]
 
 Pass the Ticket
 1. `kerberos::ptt <ticket>` Run this command on a ticket to cache and impersonate a ticket

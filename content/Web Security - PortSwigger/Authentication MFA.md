@@ -7,4 +7,4 @@
 Example: 
 First, capture a legit user session cookie by logging in as a known user. Then, reuse the session cookie (changing the user parameter to the user you want access to, "carlos" in this case) and start brute-forcing the 2FA PIN with the same session (so the PIN doesn't change every time). 
 
-![8bfae078a6ae58dc5ea7a0d6399a1cf7.png](../../_resources/8bfae078a6ae58dc5ea7a0d6399a1cf7-1.png)
+![[8bfae078a6ae58dc5ea7a0d6399a1cf7-1.png]]

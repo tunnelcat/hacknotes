@@ -195,7 +195,7 @@ Nmap done: 1 IP address (1 host up) scanned in 105.67 seconds
 
 - Using the vulnerable ES File Explorer open port, I was able to exfiltrate the image and gather credentials. 
 
-![03b75d2bd50776cbb6e2605c90f6a939.png](../../_resources/03b75d2bd50776cbb6e2605c90f6a939-1.png)
+![[03b75d2bd50776cbb6e2605c90f6a939-1.png]]
 
 - The credentials are `kristi:Kr1sT!5h@Rp3xPl0r3!`
 - I used the credentials to connect to the SSH server found earlier on port 2222. User flag done!

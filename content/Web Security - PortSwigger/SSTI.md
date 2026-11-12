@@ -67,7 +67,7 @@ Sometimes, just submitting invalid syntax is enough because of informational err
 
 You can test different payloads and use process of elimination from what seems valid/invalid: 
 
-![c73b9c7bacf2b20cd5d972ffa04354e3.png](../../_resources/c73b9c7bacf2b20cd5d972ffa04354e3-1.png)
+![[c73b9c7bacf2b20cd5d972ffa04354e3-1.png]]
 
 Be careful, though, as some payloads can be valid in multiple template engines. 
 In that case, you can try different payloads and differentiate between the responses and determine a good guess. 

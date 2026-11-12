@@ -11,7 +11,7 @@ Three key conditions:
 - No unpredictable request parameters: The requests to perform an action don't contain any parameters that the attacker doesn't know or can't guess. (Ex: when a password change function requires the existing password unknown to the attacker, no vulnerability is present)
 
 An attacker can then construct a web page with some HTML similar to: 
-![6c948d76e2f33d6f9684c8ce5f53b694.png](../../_resources/6c948d76e2f33d6f9684c8ce5f53b694-1.png)
+![[6c948d76e2f33d6f9684c8ce5f53b694-1.png]]
 
 When the victim visits the site, the browser will use the victim's cookie to perform an email address change. The `<script>` included submits the form automatically without user interaction.
 
@@ -22,7 +22,7 @@ Manually creating the HTML needed for CSRF can be a pain, but Burp Pro provides 
 Delivery mechanisms for CSRF are basically the same as reflected XSS. The attack can be placed as HTML into an attacker-controlled website, malicious links, or even stored as malicious user comments on a website.
 
 Some simple CSRF exploits use the GET method and can be fully self-contained in a single URL on a vulnerable website. In this case, no external site is needed, and the attack would look like: 
-![c961fe9efe80d10abeec06a12661236c.png](../../_resources/c961fe9efe80d10abeec06a12661236c-1.png)
+![[c961fe9efe80d10abeec06a12661236c-1.png]]
 
 # Preventing CSRF attacks
 The most robust way is to include a CSRF token with relevant requests. The token should be: 
@@ -49,7 +49,7 @@ Note: try to capture the CSRF token without using it first (since it will be inv
 Some apps tie the CSRF token to a cookie, but not to the same cookie that is used to track sessions. This happens often when an app uses different frameworks for session handling and CSRF protection (not integrated together).
 
 Example: 
-![0f0f6d9eaf4cd8fe8f52e4112b7345fb.png](../../_resources/0f0f6d9eaf4cd8fe8f52e4112b7345fb-1.png)
+![[0f0f6d9eaf4cd8fe8f52e4112b7345fb-1.png]]
 
 An attacker can login to their own account, get a valid token and associated cookie, set the cookie somehow, and reuse the CSRF token.
 
@@ -67,7 +67,7 @@ The above method works well when there is a cookie injection vulnerability (like
 GET /?search=nothing%0d%0aSet-Cookie:+csrfKey=pwned HTTP/1.1
 ```
 
-![e033692fb4d22d910e21d0a1fb197458.png](../../_resources/e033692fb4d22d910e21d0a1fb197458-1.png)
+![[e033692fb4d22d910e21d0a1fb197458-1.png]]
 
 ## CSRF token is simply duplicated in a cookie
 Going off the previous example that included a cookie injection, simply duplicating the CSRF token in a cookie does not work because if the token can be reused from the global pool, then so can the cookie. 

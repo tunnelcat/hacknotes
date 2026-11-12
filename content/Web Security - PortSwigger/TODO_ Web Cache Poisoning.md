@@ -8,7 +8,7 @@ Two phases:
 # How does a web cache work? 
 The cache is used to reduce latency and overload issues due to sending the same HTTP response to identical requests repeatedly. It sits between the server and user, where it caches responses to particular requests (usu. for some amount of time). If another user sends an equivalent request, the cached response is sent.
 
-![a6cd7d0b6faf44dc65c153d89deee884.png](../../_resources/a6cd7d0b6faf44dc65c153d89deee884-1.png)
+![[a6cd7d0b6faf44dc65c153d89deee884-1.png]]
 
 ## Cache keys
 Caches identify equivalent requests by comparing a subset of the request's components (collectively known as the "cache key"). Typically, it can include the request line and `Host` header. All other components not included in the cache key are called "unkeyed" components. 
@@ -41,31 +41,31 @@ This step can be tricky. Whether a response is cached depends on file extension,
 
 # Exploiting cache design
 ## Web cache poisoning XSS
-![8534952cb0d638fa88a19149b84beee1.png](../../_resources/8534952cb0d638fa88a19149b84beee1-1.png)
+![[8534952cb0d638fa88a19149b84beee1-1.png]]
 
 If the `X-Forwarded-Host` header in this example is unkeyed, then all users accessing `/en?region=uk` can be served an XSS payload: 
 
-![6094691fb8eb89b992b2908411e89a7e.png](../../_resources/6094691fb8eb89b992b2908411e89a7e-1.png)
+![[6094691fb8eb89b992b2908411e89a7e-1.png]]
 
 ## Unsafe resource imports
 > Note: solved but bugged on WSA
 
 If a dynamically generated URL is used for importing resources, an attacker may be able to manipulate a unkeyed header/input and point it to a malicious JS file instead.
 
-![b796686b2d8fc2795be783569c8d5ab2.png](../../_resources/b796686b2d8fc2795be783569c8d5ab2-1.png)
+![[b796686b2d8fc2795be783569c8d5ab2-1.png]]
 
 Example attack: 
 
-![8aa892e091421aa289464c82458852c8.png](../../_resources/8aa892e091421aa289464c82458852c8-1.png)
+![[8aa892e091421aa289464c82458852c8-1.png]]
 
-![356f2b3a2e2e44b44a621b79f75b8339.png](../../_resources/356f2b3a2e2e44b44a621b79f75b8339-1.png)
+![[356f2b3a2e2e44b44a621b79f75b8339-1.png]]
 
 ## Unkeyed cookie 
 > Note: solved but bugged on WSA
 
 Cookies are often used to dynamically generate content. A common example is a language selector cookie. If the cookie is unkeyed, subsequent users may see a different language than they expect due to web cache poisoning.
 
-![be0cce770581481de8722bfb140f14a9.png](../../_resources/be0cce770581481de8722bfb140f14a9-1.png)
+![[be0cce770581481de8722bfb140f14a9-1.png]]
 
 # Exploiting cache implementation
 

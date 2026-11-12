@@ -489,9 +489,9 @@ SharpHound Enumeration Completed at 4:28 PM on 8/10/2021! Happy Graphing!
 - Back on Kali, reconnect the VPN, copy the zip file over, start neo4j and BloodHound to analyze the zip file
 - Notice that doing the "Shortest Paths from Kerberoastable Users" query returns Administrator as Kerberoastable
 
-![79ead63dd2d7da06b703e6c4a54e76dd.png](../../_resources/79ead63dd2d7da06b703e6c4a54e76dd-1.png)
+![[79ead63dd2d7da06b703e6c4a54e76dd-1.png]]
 
-![fca370b98b18c3aa0d6695d615b681dc.png](../../_resources/fca370b98b18c3aa0d6695d615b681dc-1.png)
+![[fca370b98b18c3aa0d6695d615b681dc-1.png]]
 
 ### Kerberoasting administrator with GetUserSPNs
 

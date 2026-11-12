@@ -153,9 +153,9 @@ Finished ffuf scan
 
 ### Enumerating webpages
 
-![8333c73a3c995ce039c9c6c6e0e2e97a.png](../../_resources/8333c73a3c995ce039c9c6c6e0e2e97a-1.png)
+![[8333c73a3c995ce039c9c6c6e0e2e97a-1.png]]
 
-![e27decae2c3a50e5ac0577d39afbe342.png](../../_resources/e27decae2c3a50e5ac0577d39afbe342-1.png)
+![[e27decae2c3a50e5ac0577d39afbe342-1.png]]
 
 
 ### Finding possible exploits

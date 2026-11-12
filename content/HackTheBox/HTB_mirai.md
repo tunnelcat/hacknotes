@@ -205,11 +205,11 @@ Nmap done: 1 IP address (1 host up) scanned in 15.71 seconds
 
 - After initial recon, I visited the `/admin` path on the port 80 webserver to find a Pi-Hole instance. As expected, port 32400 holds a Plex Media Server instance. 
 
-![a9b4fcf9599747fb26cc0238f892b38d.png](../../_resources/a9b4fcf9599747fb26cc0238f892b38d-1.png)
+![[a9b4fcf9599747fb26cc0238f892b38d-1.png]]
 
-![3d8b204cecf79f30dcca1989d56c07aa.png](../../_resources/3d8b204cecf79f30dcca1989d56c07aa-1.png)
+![[3d8b204cecf79f30dcca1989d56c07aa-1.png]]
 
-![506296bc308963749151b8a8323abe17.png](../../_resources/506296bc308963749151b8a8323abe17-1.png)
+![[506296bc308963749151b8a8323abe17-1.png]]
 
 ## Initial Access
 

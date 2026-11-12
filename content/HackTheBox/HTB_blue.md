@@ -167,10 +167,10 @@ Nmap done: 1 IP address (1 host up) scanned in 109.88 seconds
 
 - Exploitation using Metasploit
 
-![bba1e3c2c14848ad0825630aab982863.png](../../_resources/bba1e3c2c14848ad0825630aab982863-1.png)
+![[bba1e3c2c14848ad0825630aab982863-1.png]]
 
 - Finally, get the user.txt and root.txt from the respective user directories.
 
-![d6b7527719bf33dc3a01d12749daacb2.png](../../_resources/d6b7527719bf33dc3a01d12749daacb2-1.png)
+![[d6b7527719bf33dc3a01d12749daacb2-1.png]]
 
 - Done!

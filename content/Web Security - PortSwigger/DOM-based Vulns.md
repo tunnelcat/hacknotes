@@ -44,7 +44,7 @@ Database
 ```
 
 ## Common sinks
-![e8738722928d4e9276998402ed11d856.png](../../_resources/e8738722928d4e9276998402ed11d856-1.png)
+![[e8738722928d4e9276998402ed11d856-1.png]]
 
 # Web message vulns
 ## Basic web message attack

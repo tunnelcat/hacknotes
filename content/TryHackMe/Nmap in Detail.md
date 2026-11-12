@@ -24,11 +24,11 @@ The `-sT` flag performs a three-way handshake to determine if ports are open/clo
 
 If a port is OPEN, the target will respond to the SYN with a SYN/ACK. Then Nmap completes the handshake by sending an ACK.
 
-![a4c916a00574fef884a20c76da698b2d.png](../../_resources/a4c916a00574fef884a20c76da698b2d-1.png)
+![[a4c916a00574fef884a20c76da698b2d-1.png]]
 
 If a port is CLOSED, the target will respond to the SYN with an RST.
 
-![971bd6bd35bae5b69557f9f662c363cf.png](../../_resources/971bd6bd35bae5b69557f9f662c363cf-1.png)
+![[971bd6bd35bae5b69557f9f662c363cf-1.png]]
 
 A port is considered to be FILTERED if there is no response, as packets are likely being dropped. 
 
@@ -37,7 +37,7 @@ Also known as a half-open or stealth scan. The `-sS` flag sends back a RST packe
 
 This is what an OPEN port looks like. 
 
-![ed2ab48b1a4ae03e41aa8b5a9bafddd9.png](../../_resources/ed2ab48b1a4ae03e41aa8b5a9bafddd9-1.png)
+![[ed2ab48b1a4ae03e41aa8b5a9bafddd9-1.png]]
 
 CLOSED or FILTERED ports look similar to the TCP Connect scans.
 
@@ -61,15 +61,15 @@ These scans tend to be stealthier than even SYN "stealth" scans, mostly used for
 
 The `-sN` Null scan sends TCP requests with no flags at all. The target host should respond with a RST if the port is closed. 
 
-![8aba32939a71b91a63255a6f95df3b33.png](../../_resources/8aba32939a71b91a63255a6f95df3b33-1.png)
+![[8aba32939a71b91a63255a6f95df3b33-1.png]]
 
 The `-sF` FIN scan is almost identical, but sends a FIN flag instead of a completely empty packet (usually used to gracefully close active connections). Again, Nmap expects a RST if the port is closed. 
 
-![778bda216916167278703fa8b16de326.png](../../_resources/778bda216916167278703fa8b16de326-1.png)
+![[778bda216916167278703fa8b16de326-1.png]]
 
 The `-sX` Xmas scan sends a malformed TCP packet and expects a RST response for closed ports. It's called Xmas because the flags that it sets (PSH, URG, and FIN) make it look like a blinking christmas tree in Wireshark. 
 
-![cd5adadb2f5bb23b1e5c47fbb8fce12b.png](../../_resources/cd5adadb2f5bb23b1e5c47fbb8fce12b-1.png)
+![[cd5adadb2f5bb23b1e5c47fbb8fce12b-1.png]]
 
 The expected response for open ports with these scans is also identical, and is very similar to that of a UDP scan. If the port is open then there is no response to the malformed packet. Therefore, ports are only identified as being `open|filtered`, `closed`, or `filtered`.
 

@@ -279,21 +279,21 @@ Interesting Finding(s):
 
 - Visiting the site shows a WordPress blog with a Minecraft theme
 
-![7cacfa8986d02aced0a14f3ce94ae6ec.png](../../_resources/7cacfa8986d02aced0a14f3ce94ae6ec-1.png)
+![[7cacfa8986d02aced0a14f3ce94ae6ec-1.png]]
 
 - The `/phpmyadmin` path reveals a phpmyadmin instance, and looking in the page source gives the version number away: 
 
-![99a2cb8fc525c360b2bf6c3ec859692c.png](../../_resources/99a2cb8fc525c360b2bf6c3ec859692c-1.png)
+![[99a2cb8fc525c360b2bf6c3ec859692c-1.png]]
 
 - The `/wiki` path reveals that there may be Minecraft plugins stored somewhere on the server that may have credentials to some sort of database or something else
 
-![5e3305cc7fbf46ff21e8c795c08e369d.png](../../_resources/5e3305cc7fbf46ff21e8c795c08e369d-1.png)
+![[5e3305cc7fbf46ff21e8c795c08e369d-1.png]]
 
 ### Finding phpmyadmin credentials
 
 - The `/plugins` path reveals the Minecraft plugins mentioned in the wiki, and after downloading `BlockyCore.jar` and extracting the file, we can see that the `com/myfirstplugin/BlockyCore.class` file has credentials!
 
-![4f0cf1eaea797bbbcc4db894b07f480b.png](../../_resources/4f0cf1eaea797bbbcc4db894b07f480b-1.png)
+![[4f0cf1eaea797bbbcc4db894b07f480b-1.png]]
 
 ```
 ┌──(kali㉿kali)-[~/…/machines/blocky/com/myfirstplugin]
@@ -329,7 +329,7 @@ BlockyCore.java
 
 - Most likely, the `root:8YsqfCTnvxAUeduzjNSXe22` login is for phpmyadmin (because the default username is root), and indeed we can login to phpmyadmin with those credentials.
 
-![e4da15e736ac37da1d1c792b13d56555.png](../../_resources/e4da15e736ac37da1d1c792b13d56555-1.png)
+![[e4da15e736ac37da1d1c792b13d56555-1.png]]
 
 
 ## Initial Access

@@ -28,13 +28,13 @@ A mature organization may provide objectives and scope like:
 # Rules of Engagement (ROE)
 - Generally acts as the contract between parties, legally binding
 
-![75303cad5a1ce5acce78d80ebb51f103.png](../../_resources/75303cad5a1ce5acce78d80ebb51f103-1.png)
+![[75303cad5a1ce5acce78d80ebb51f103-1.png]]
 
 # Campaign Planning
-![a1754770e0bf0941e10dbe55b69c6a5e.png](../../_resources/a1754770e0bf0941e10dbe55b69c6a5e-1.png)
+![[a1754770e0bf0941e10dbe55b69c6a5e-1.png]]
 
 # Engagement Documentation
-![0b966b9d1e85a5f6e7b5d8736865c219.png](../../_resources/0b966b9d1e85a5f6e7b5d8736865c219-1.png)
+![[0b966b9d1e85a5f6e7b5d8736865c219-1.png]]
 
 # Concept of Operations
 - The Concept of Operation (CONOPS) details a high-level overview of the proceedings of an engagement (like executive summary)
@@ -80,7 +80,7 @@ Example subsections:
     -   Cloud
     -   Misc.
 
-![7525777b392949f9569f308d86a741c1.png](../../_resources/7525777b392949f9569f308d86a741c1-1.png)
+![[7525777b392949f9569f308d86a741c1-1.png]]
 
 # Operations Plan
 - Flexible document(s) that provides specific details of the engagement and actions occurring
@@ -102,7 +102,7 @@ Example subsections:
 -   Communications plan
 -   Rules of Engagement (optional)
 
-![940ed8294be1beeb1aa50093f5426698.png](../../_resources/940ed8294be1beeb1aa50093f5426698-1.png)
+![[940ed8294be1beeb1aa50093f5426698-1.png]]
 
 # Mission Plan
 - Internally used document, structure and detail are less important and can vary

@@ -16,13 +16,13 @@ Example: Can buy negative quantities of a product
 
 Example: Can buy large amounts of product due to integer overflow
 
-![5e95dded16638658e77556832c1a9a20.png](../../_resources/5e95dded16638658e77556832c1a9a20-1.png)
+![[5e95dded16638658e77556832c1a9a20-1.png]]
 
 Example: After registration, the email is truncated. This may be used to abuse email subdomains. (If @dontwannacry.com users are admin, then AAAAAAAAAAAAAAAA@dontwannacry.com.attacker-controlled.com will be an admin account because it will be truncated up to dontwannacry.com, but the registration email will be sent to attacker-controlled.com
 
-![7b1c4b1c2ab1c3538aa6dbc6da65fc6e.png](../../_resources/7b1c4b1c2ab1c3538aa6dbc6da65fc6e-1.png)
+![[7b1c4b1c2ab1c3538aa6dbc6da65fc6e-1.png]]
 
-![be5c1df418cbdf91b6df3607442c1e79.png](../../_resources/be5c1df418cbdf91b6df3607442c1e79-1.png)
+![[be5c1df418cbdf91b6df3607442c1e79-1.png]]
 
 ## Flawed assumptions about user behavior
 - A user might initially be trusted, but if the trust is indefinite, then trust manipulation can occur
@@ -49,7 +49,7 @@ Example: User can forward the POST login request, drop other packets in the work
 
 Example: Interleaving coupons to get huge reductions (app only looks at the most recent coupon to check if it is used...)
 
-![90d1b5423b924dddb0459f1a5d37882d.png](../../_resources/90d1b5423b924dddb0459f1a5d37882d-1.png)
+![[90d1b5423b924dddb0459f1a5d37882d-1.png]]
 
 ## Authentication bypass via encryption oracle
 - Encryption oracle: a place where user can submit input and get a ciphertext

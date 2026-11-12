@@ -24,7 +24,7 @@ Two steps:
 - Introduce a `DOCTYPE` element that defines the malicious external entity
 - Edit a data value in the XML in the standard response to make use of the defined external entity
 
-![5cf3ea19e6e6dbe43fbac85b9342a5a8.png](../../_resources/5cf3ea19e6e6dbe43fbac85b9342a5a8-1.png)
+![[5cf3ea19e6e6dbe43fbac85b9342a5a8-1.png]]
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -35,7 +35,7 @@ Two steps:
 # XXE Exploits - SSRF
 Similar to retrieving files, just with different syntax.
 
-![71621a561f903f3f68d13caa158cfdbc.png](../../_resources/71621a561f903f3f68d13caa158cfdbc-1.png)
+![[71621a561f903f3f68d13caa158cfdbc-1.png]]
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -152,7 +152,7 @@ Instead, you can use `XInclude` that allows an XML document to be build from sub
 ```
 
 Example: 
-![e29578489a3355bae9386311320fe274.png](../../_resources/e29578489a3355bae9386311320fe274-1.png)
+![[e29578489a3355bae9386311320fe274-1.png]]
 
 ## XXE attacks via file upload
 Some apps allow users to upload files that are processed server-side. Some file formats use XML (sub)components, like DOCX and SVG. If processed insecurely, malicious files can be uploaded to inject XXE exploits.
@@ -165,7 +165,7 @@ Example exploit (Apache Batik):
 > Note: you might want to change the font size to make it readable.
 
 Result: 
-![0d9d6428aadb183b0691c848d28f70f4.png](../../_resources/0d9d6428aadb183b0691c848d28f70f4-1.png)
+![[0d9d6428aadb183b0691c848d28f70f4-1.png]]
 
 ## XXE attacks via modified content type
 Most POST requests use a default content type like `application/x-www-form-urlencoded`. However, you may be able to send other content types, including XML.

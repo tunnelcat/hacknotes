@@ -34,7 +34,7 @@ scope=openid email
 ```
 
 ## Authorization code grant type
-![17f64cb3838eeaca80eee49f1c608b4b.png](../../_resources/17f64cb3838eeaca80eee49f1c608b4b-1.png)
+![[17f64cb3838eeaca80eee49f1c608b4b-1.png]]
 
 ### 1. Authorization request
 ```
@@ -110,7 +110,7 @@ The resource is granted.
 ## Implicit grant type
 Though much simpler, the implicit grant type is far less secure. All communication happens via browser redirects--there is no secure back-channel. The client application receives the access token immediately after the user gives consent.
 
-![6707756a4d07530f5799e425f382ec7d.png](../../_resources/6707756a4d07530f5799e425f382ec7d-1.png)
+![[6707756a4d07530f5799e425f382ec7d-1.png]]
 
 ###  1. Authorization request
 Pretty much like authorization code flow, except with `response_type` set to `token`.

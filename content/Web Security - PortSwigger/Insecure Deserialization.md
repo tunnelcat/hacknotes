@@ -81,7 +81,7 @@ Certain functionality may perform dangerous operations on data from a deserializ
 
 For example, if a website has a "Delete user" feature, and the user's profile picture is deleted by accessing the path `$user->image_location` specified in a serialized object, then `image_location` can be set to an arbitrary file path. This allows the user to delete an arbitrary file by deleting their own account.
 
-![f931d14ca305a6d68e0fed7002134fa8.png](../../_resources/f931d14ca305a6d68e0fed7002134fa8-1.png)
+![[f931d14ca305a6d68e0fed7002134fa8-1.png]]
 
 ## Magic methods
 Magic methods are a special subset of methods that you do not have to explicitly invoke. Instead, they are invoked automatically whenever a particular event or scenario occurs. Magic methods are a common feature of object-oriented programming in various languages. They are sometimes indicated by prefixing or surrounding the method name with double-underscores. 

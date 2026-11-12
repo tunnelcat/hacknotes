@@ -69,13 +69,13 @@ OS and Service detection performed. Please report any incorrect results at https
 
 - Anonymous login for FTP is interesting... Also seems to have a samba server. Also, distccd v1 seems to have a public exploit with RCE? 
 
-![64beb32c7dee5f298d17cad61e07b607.png](../../_resources/64beb32c7dee5f298d17cad61e07b607-1.png)
+![[64beb32c7dee5f298d17cad61e07b607-1.png]]
 
-![453d957dd81ebd0dbb719b5a266e02b9.png](../../_resources/453d957dd81ebd0dbb719b5a266e02b9-1.png)
+![[453d957dd81ebd0dbb719b5a266e02b9-1.png]]
 
-![cec02b8be19b4ebc2376de4d7c4ab895.png](../../_resources/cec02b8be19b4ebc2376de4d7c4ab895-1.png)
+![[cec02b8be19b4ebc2376de4d7c4ab895-1.png]]
 
-![885b838f4a9eb8c44a029fed6fe5f9b1.png](../../_resources/885b838f4a9eb8c44a029fed6fe5f9b1-1.png)
+![[885b838f4a9eb8c44a029fed6fe5f9b1-1.png]]
 
 
 - If we go this route, it seems that we need privilege escalation, but not sure what to use... 
@@ -87,17 +87,17 @@ searchsploit privilege escalation | grep -i linux | grep -i kernel | grep -i 2.6
 - Maybe this isn't the way. Let's go back to the enumeration results and see if there is a faster way in for root privileges.
 - Remember the Samba 3.0.20-Debian from nmap? Turns out there is a critical exploit.
 
-![474bde77c8ba6b68a2cc469a0e2699d1.png](../../_resources/474bde77c8ba6b68a2cc469a0e2699d1-1.png)
+![[474bde77c8ba6b68a2cc469a0e2699d1-1.png]]
 
 - So we search for it in Metasploit and try to run it on the target host...
 
-![531378673a899bb84e19f06065fda46f.png](../../_resources/531378673a899bb84e19f06065fda46f-1.png)
+![[531378673a899bb84e19f06065fda46f-1.png]]
 
-![20b478b7a498f5c2d3240ef32279d499.png](../../_resources/20b478b7a498f5c2d3240ef32279d499-1.png)
+![[20b478b7a498f5c2d3240ef32279d499-1.png]]
 
 - Yay! root is pwned. Now it's just as simple as a search for the flag files recursively.
 
-![5dc197bbb5e7696b52c034844197d388.png](../../_resources/5dc197bbb5e7696b52c034844197d388-1.png)
+![[5dc197bbb5e7696b52c034844197d388-1.png]]
 
 - Done!
 

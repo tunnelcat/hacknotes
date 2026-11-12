@@ -39,26 +39,26 @@ Try supplying an arbitrary Host header. Sometimes you can still access the targe
 
 ## Check for flawed validation
 Sometimes the Host header is improperly parsed. Some examples below. 
-![fca3f4328d1896c663b645fde42fc512.png](../../_resources/fca3f4328d1896c663b645fde42fc512-1.png)
+![[fca3f4328d1896c663b645fde42fc512-1.png]]
 
 ## Send ambiguous requests
 Sometimes there are discrepancies between the code that validates the host and the code that does something vulnerable. There may be a way to trick systems to send a request that appears to have a different host.
 
 Try injecting duplicate Host headers and see what happens. Precendence? 
-![b2011eb68a1a58e3111934450ff3141e.png](../../_resources/b2011eb68a1a58e3111934450ff3141e-1.png)
+![[b2011eb68a1a58e3111934450ff3141e-1.png]]
 
 Try supplying an absolute URL. 
-![b435dddb1878bdc25b731d2ea45c5b16.png](../../_resources/b435dddb1878bdc25b731d2ea45c5b16-1.png)
+![[b435dddb1878bdc25b731d2ea45c5b16-1.png]]
 
 Try adding line wrapping. 
-![ad837ac745c8ef066b5143b57e108f4d.png](../../_resources/ad837ac745c8ef066b5143b57e108f4d-1.png)
+![[ad837ac745c8ef066b5143b57e108f4d-1.png]]
 
 etc...
 
 ## Inject host override headers
 If you can't override the Host header using ambiguous requests, try injecting into host override headers like `X-Forwarded-For`.
 This may allow you to redirect the URL.
-![8b2c861b1e2b5b8c8337e6d2edcc6e08.png](../../_resources/8b2c861b1e2b5b8c8337e6d2edcc6e08-1.png)
+![[8b2c861b1e2b5b8c8337e6d2edcc6e08-1.png]]
 
 - `X-Forwarded-For`
 - `X-Host`

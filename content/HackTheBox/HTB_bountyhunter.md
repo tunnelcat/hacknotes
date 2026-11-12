@@ -102,11 +102,11 @@ server-status           [Status: 403, Size: 277, Words: 20, Lines: 10]
 
 - Visiting index.php gave a very unassuming site (definitely not giving hints about using Burp later)
 
-![aaa19738a093e3f613350d73367827b4.png](../../_resources/aaa19738a093e3f613350d73367827b4-1.png)
+![[aaa19738a093e3f613350d73367827b4-1.png]]
 
 - Visiting portal.php directed to log_submit.php
 
-![ef7283397c1f0354de7ae5e64cbc9883.png](../../_resources/ef7283397c1f0354de7ae5e64cbc9883-1.png)
+![[ef7283397c1f0354de7ae5e64cbc9883-1.png]]
 
 - ...And log_submit.php had a php form of some sort, so I decided to use Burp Proxy to capture the HTTP data going across. 
 
@@ -116,11 +116,11 @@ server-status           [Status: 403, Size: 277, Words: 20, Lines: 10]
 
 - Using Burp Proxy, I was able to capture the base64 encoded data that was passed in the form and determined that it was XML data. 
 
-![36fbb6bd11aaed6be7ee59ea91563aa4.png](../../_resources/36fbb6bd11aaed6be7ee59ea91563aa4-1.png)
+![[36fbb6bd11aaed6be7ee59ea91563aa4-1.png]]
 
-![f4ac0e9ce8c9ca5b41b5ecf5c2db686e.png](../../_resources/f4ac0e9ce8c9ca5b41b5ecf5c2db686e-1.png)
+![[f4ac0e9ce8c9ca5b41b5ecf5c2db686e-1.png]]
 
-![4055bcf00e6ce7f5f1cc4ef048e5f1f0.png](../../_resources/4055bcf00e6ce7f5f1cc4ef048e5f1f0-1.png)
+![[4055bcf00e6ce7f5f1cc4ef048e5f1f0-1.png]]
 
 ### XXE injection
 
@@ -150,9 +150,9 @@ PD94bWwgIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9IklTTy04ODU5LTEiPz4KCQk8IURPQ1RZUEUgZm9v
 
 - The proof of concept worked! `/etc/passwd` revealed a `development` user that could be useful when using SSH later. Now onto bigger tasks...
 
-![5126660327e29f63b752da4af3c38de6.png](../../_resources/5126660327e29f63b752da4af3c38de6-1.png)
+![[5126660327e29f63b752da4af3c38de6-1.png]]
 
-![e0d3d4949a96c41fe7470318490f8284.png](../../_resources/e0d3d4949a96c41fe7470318490f8284-1.png)
+![[e0d3d4949a96c41fe7470318490f8284-1.png]]
 
 
 ### Exfiltrating db.php with encoded XXE injection

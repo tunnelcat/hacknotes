@@ -1,6 +1,6 @@
 # Forest Overview
 
-![209fa4a3d244f33834f7261c2e2657cb.png](../../_resources/209fa4a3d244f33834f7261c2e2657cb-1.png)
+![[209fa4a3d244f33834f7261c2e2657cb-1.png]]
 
 Parts of a forest: 
 - Trees - A hierarchy of domains in Active Directory Domain Services
@@ -51,7 +51,7 @@ Parts of a forest:
 # Trusts + Policies
 Trusts are a mechanism for users in the network to gain access to resources in the domain. 
 
-![faa07b8fd7a50df7fb3e7f52155794fa.png](../../_resources/faa07b8fd7a50df7fb3e7f52155794fa-1.png)
+![[faa07b8fd7a50df7fb3e7f52155794fa-1.png]]
 
 ## Types of trusts
 -   Directional - The direction of the trust flows from a trusting domain to a trusted domain
@@ -78,7 +78,7 @@ Two main types:
 # Azure AD
 Cloud version of AD, acts as a middle man between physical Active Directory and user sign-on, making a lot of AD attacks ineffective.
 
-![c7f8145d80a1c1206872469235b71c63.png](../../_resources/c7f8145d80a1c1206872469235b71c63-1.png)
+![[c7f8145d80a1c1206872469235b71c63-1.png]]
 
 | Windows Server AD      | Azure AD |
 | ----------- | ----------- |
