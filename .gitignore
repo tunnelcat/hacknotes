@@ -13,5 +13,3 @@ replit.nix
 quartz/cli/tui/dist/
 .turbo/
 
-# Excluded for now: heavy image attachments (makes the push too large)
-content/_resources/
